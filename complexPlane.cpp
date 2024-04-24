@@ -1,5 +1,6 @@
 #include "complexPlane.h"
 #include <cmath>
+#include <sstream>
 
 ComplexPlane::ComplexPlane(int pixelWidth, int pixelHeight)
 {
@@ -64,6 +65,8 @@ void ComplexPlane::setCenter(Vector2i mousePixel)
     m_state = State::CALCULATING;
 }
 
+
+
 void ComplexPlane::setMouseLocation(Vector2i mousePixel)
 {
     Vector2f coords = mapPixelToCoords(mousePixel);
@@ -73,17 +76,21 @@ void ComplexPlane::setMouseLocation(Vector2i mousePixel)
 
 void ComplexPlane::loadText(Text& Text)
 {
+    Vector2i currLocation = sf::Mouse::getPosition();
+    ostringstream texter;
+    //Start putting the information here to update every frame. (.x, .y, yatta yatta)
+    Text.setString(texter.str());
 
 }
 
-int ComplexPlane::countIterations(Vector2f coord)
+size_t ComplexPlane::countIterations(Vector2f coord)
 {
-    return 0;
+    return 
 }
 
 Vector2f mapPixelToCoords(Vector2i mousePixel);
 
 void iterationToRGB(size_t count, Uint8& g, Uint8& b)
 {
-
+    cout << "I'm working!!!";
 }

@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <SFML/Window/Mouse.hpp>
 
 using namespace sf;
 using namespace std;
@@ -35,7 +36,7 @@ class ComplexPlane : public sf::Drawable
     private:
         size_t countIterations(Vector2f coord);
         Vector2f mapPixelToCoords(Vector2i mousePixel);
-        void iterationToRGB(size_t count, Uint8& g, Uint8& b);
+        void iterationToRGB(size_t count, Uint8& r, Uint8& g, Uint8& b);
         VertexArray m_vArray;
         State m_state;
         Vector2i m_mouseLocation;
